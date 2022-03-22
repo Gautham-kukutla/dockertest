@@ -14,7 +14,7 @@ git([url: 'https://github.com/Gautham-kukutla/jenkins-docker-example.git', branc
 stage('Building image') {
 steps{
 script {
-dockerImage = docker.build imagename
+dockerImage = docker.build --no-cache imagename
 }
 }
 }
