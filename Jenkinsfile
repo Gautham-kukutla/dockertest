@@ -12,9 +12,10 @@ git([url: 'https://github.com/Gautham-kukutla/jenkins-docker-example.git', branc
 }
 }
 stage('Building image') {
+           noCache true
 steps{
 script {
-           dockerImage = docker.build noCache imagename
+           dockerImage = docker.build imagename
 }
 }
 }
