@@ -15,7 +15,8 @@ stage('Building image') {
            noCache true
 steps{
 script {
-           dockerImage = docker.build imagename
+           //dockerImage = docker.build imagename
+           dockerImage = docker.build("$imagename", "--no-cache  .")
 }
 }
 }
