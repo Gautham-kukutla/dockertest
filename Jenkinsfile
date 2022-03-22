@@ -14,9 +14,8 @@ git([url: 'https://github.com/Gautham-kukutla/jenkins-docker-example.git', branc
 stage('Building image') {
 steps{
 script {
-           noCache true{
-                      dockerImage = docker.build imagename
-           }
+                      //dockerImage = docker.build imagename
+                      def dockerImage = docker.build("-f Dockerfile.local", "--no-cache", "-t ${imagename} ."
 }
 }
 }
